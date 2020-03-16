@@ -1,0 +1,42 @@
+from flask import Flask , request , render_template
+from werkzeug.utils import secure_filename
+from PIL import Image
+from matplotlib import pyplot
+import numpy as np
+import os
+from load_model import model
+
+app = Flask(__name__)
+app.debug = True
+
+
+
+@app.route('/')
+def upload():
+    return render_template('upload.html')
+
+@app.route('/', methods = ['GET', 'POST'])
+def upload_file():
+   # Create a directory in a known location to save files to.
+   uploads_dir = os.path.join(r'C:\Users\Ramsha\Desktop\MNIST FLASK APP', 'static')
+
+   if request.method == 'POST':
+      f = request.files['file']
+      f.save(os.path.join(uploads_dir , secure_filename(f.filename)))
+
+
+      img = Image.open(f).convert('L')
+      img = img.resize((28,28) , Image.ANTIALIAS)
+      data = ((np.asarray(img))/255.0)
+      pred = model.predict_classes(data.reshape(1,28,28))
+
+      return render_template('prediction.html' , out = str(pred[0]) , im = f.filename)
+
+
+
+
+
+
+
+if __name__ == '__main__':
+   app.run(debug = True)

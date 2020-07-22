@@ -1,0 +1,41 @@
+body{
+    background: linear-gradient(rgb(232, 246, 105) 10% , rgb(150, 52, 231), rgb(255, 66, 66) )!important;
+    height: 400px;
+    width:550px;
+}
+
+form{
+    margin-left: 205px !important; 
+    margin-top: 20px !important;
+} 
+
+input{
+    
+    color: rgb(93, 92, 92);
+    background-color: rgb(211, 16, 16);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+
+}
+
+button{
+    color: white;
+    background-color: rgb(54, 47, 47);
+}
+ 
+  
+.predict_img{
+    border: 5px solid rgb(66, 68, 226);
+    border-radius: 10px;
+    opacity: 0.1;
+    margin-top: -1px;
+    margin-left: 215px;
+}
+
+.output{
+    color: rgb(255, 254, 254);
+    margin-top: 1px;
+    margin-left: 170px;
+    margin-bottom: 1px;
+}
+
+

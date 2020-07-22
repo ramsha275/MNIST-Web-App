@@ -1,0 +1,25 @@
+body{
+    background: linear-gradient(rgb(232, 246, 105) 10% , rgb(231, 162, 52), rgb(255, 66, 66) );
+    height: 329px;
+    width:550px;
+
+} 
+
+form{  
+    margin-left: 205px;
+    margin-top: 20px;
+}
+
+input{
+    
+    color: rgb(93, 92, 92);
+    background-color: rgb(253, 252, 252);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+
+}
+
+button{
+    color: white;
+    background-color: rgb(54, 47, 47);
+}
+ 
